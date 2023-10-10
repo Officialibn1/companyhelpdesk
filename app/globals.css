@@ -2,26 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* base styles */
+body {
+  /* background: #ebf0fa; */
+  @apply text-gray-300 w-full m-0 p-0;
+  padding: 0rem !important;
+}
+
+main {
+  @apply max-w-6xl my-12 mx-auto px-8;
+}
+
+p {
+  @apply text-lg font-light;
+}
+
+.ticketsCard {
+  @apply card p-5 pb-7 w-full md:w-2/5 bg-slate-950 hover:bg-slate-800 outline outline-2 outline-slate-500 relative overflow-hidden ;
+}
+
+.ticketsCard h1 {
+  @apply text-2xl font-medium mb-4 text-green-400;
+}
+.ticketsCard h1 span{
+  @apply text-gray-300;
+}
+
+.ticketsCard h3 {
+ @apply text-sm font-light mb-2;
+}
+
+.ticketsDetails {
+  @apply card p-5 pb-7 w-2/3 bg-slate-950 outline outline-1 outline-slate-500 mx-auto my-20 relative overflow-hidden;
+}
+
+.ticketsDetails h1 {
+  @apply text-2xl font-medium mb-4 text-green-400;
+}
+.ticketsDetails h1 span{
+  @apply text-gray-300;
+}
+
+.ticketsDetails h3 {
+ @apply text-sm font-light mb-2;
+}
+
+.ticketBadge {
+  @apply absolute right-0 bottom-0 rounded-tl-lg py-1 px-3 text-slate-900 text-sm opacity-80;
+}
+
+.ticketBadge.Low {
+  @apply bg-success;
+}
+
+.ticketBadge.Medium {
+  @apply bg-warning;
+}
+
+.ticketBadge.High {
+  @apply bg-error;
+}
+
+@keyframes loading-ui {
+  0% {
+    background-color: rgba(209,213,219, .8);
+  }
+  100% {
+    background-color: rgba(209,213,219, .4);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.ticketLoading {
+  animation: loading-ui 400ms infinite alternate;
+  width: 100%;
+  height: 15px;
+  margin: 14px 0;
+  border-radius: .15rem;
+}
+
+.ticketLoading.smLoading {
+  height: 10px;
+}
+
+.ticketLoading:nth-child(1) {
+  width: 20%;
+}
+
+.ticketLoading:nth-child(2) {
+  width: 35%;
+}
+
+.ticketLoading:last-child {
+  width: 60%;
+}
+
+.footerSection {
+  @apply w-2/3 text-center mx-auto;
+}
+
+.footerSection h1 {
+  @apply text-3xl my-3;
+}
+
+.footerSection p {
+  @apply font-extralight text-sm;
 }
