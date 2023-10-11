@@ -20,7 +20,7 @@ const TicketsPage = async () => {
 
   return (
     <section>
-        <h1 className="text-2xl outline outline-base-content p-3 text-center mb-5">Opened Tickets</h1>
+        <h1 className="pageHeading">Opened Tickets</h1>
 
         <div className="my-20 flex flex-wrap w-full gap-8 justify-center">
             {tickets.map(ticket => (

@@ -30,7 +30,7 @@ const TicketPage = async ({params}: {params: {id: string}}) => {
 
   return (
     <section>
-        <h1 className="text-2xl outline outline-base-content p-3 text-center mb-5">
+        <h1 className="pageHeading">
             Ticket Details Page
         </h1>
 
