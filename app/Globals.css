@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply max-w-6xl mx-auto;
+}
+
+nav {
+    @apply my-7 py-5 px-8 w-full flex justify-between bg-slate-800 rounded-xl items-center;
+}
+
+.deskLogo {
+    @apply flex items-center gap-3;
+}
+
+.deskLogo > span {
+    @apply text-2xl text-slate-200;
+}
+
+.navLinks > ul {
+    @apply flex gap-5;
+}
+
+a {
+    @apply text-xs btn btn-outline outline-slate-200 text-slate-200 rounded-lg hover:bg-slate-200 hover:text-slate-800;
+}
+
+.deskHeader {
+    @apply text-center font-semibold text-2xl text-slate-800;
+}
+
+.sectionText {
+    @apply w-full md:w-2/3 text-center mx-auto text-lg text-slate-800 my-7;
+}
+
+.sectionHeader {
+    @apply my-7 py-5 px-8 w-full bg-slate-800 rounded-xl text-2xl text-slate-200 text-center;
+}
+
+.blogCardsContainer {
+    @apply flex flex-wrap justify-center gap-5;
+}
+
+.blogCard {
+    @apply w-full rounded-xl outline outline-slate-800 p-5 md:w-72 text-slate-800;
+}
+
+.blogCard h1 {
+    @apply text-center text-lg my-3;
+}
+
+.blogCard p {
+    @apply text-base;
+}
+
