@@ -35,8 +35,8 @@ const HomePage = () => {
                 </div>
             ))}
         </div>
-
-        <div className="sectionText">
+        <div className=" mt-16 w-full"></div>
+        <div className="sectionText ">
             <p>
             These updates aim to enhance your experience at Company and create a more collaborative, informed, and supportive work environment. We value your feedback, so if you have any suggestions or questions about these updates, don&apos;t hesitate to reach out through the Helpdesk. Thank you for being an essential part of our Company community!
             </p>
