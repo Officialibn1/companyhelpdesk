@@ -63,5 +63,26 @@ a {
 
 
 footer {
-    @apply my-7 py-5 px-8 w-full flex bg-slate-800 rounded-xl items-center;
+    @apply my-7 py-5 px-8 w-full flex bg-slate-800 rounded-xl items-center justify-between;
+}
+
+.footerLogo {
+    @apply flex flex-col items-center;
+}
+
+.footerLogo > span {
+    @apply text-2xl text-slate-200;
+}
+
+.footerLeft > ul {
+    @apply flex gap-5;
+}
+
+footer.footerLeft svg {
+    @apply w-8 h-8;
+}
+
+
+.footerLeft > p {
+    @apply text-slate-200 text-center mt-5 font-thin;
 }

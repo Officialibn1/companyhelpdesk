@@ -2,6 +2,7 @@ import './Globals.css';
 import React from 'react'
 import { Montserrat } from "next/font/google";
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const montserrat = Montserrat({subsets: ['latin']})
 
@@ -14,6 +15,7 @@ const layout = ({ children }: {
         <body className={montserrat.className}>
           <Navbar />
           {children}
+          <Footer />
         </body>
     </html>
   )
