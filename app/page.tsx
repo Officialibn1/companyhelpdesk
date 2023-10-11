@@ -1,3 +1,4 @@
+import { blogs } from '@/dummyData'
 import React from 'react'
 
 const HomePage = () => {
@@ -26,13 +27,19 @@ const HomePage = () => {
         </h1>
 
         <div className="blogCardsContainer">
-            <div className="blogCard">
-                <h1>Introducing Enhanced User Profiles</h1>
+            {blogs.map(blog => (
+                <div className="blogCard" key={blog.id}>
+                    <h1>{blog.header}</h1>
 
-                <p>
-                We&apos;re excited to announce the launch of enhanced user profiles! You can now personalize your profile with a photo, update your contact information, and add a brief bio. This feature aims to foster better connections among colleagues and streamline communication within the company. Head to your profile settings to get started!
-                </p>
-            </div>
+                    <p>{blog.body}</p>
+                </div>
+            ))}
+        </div>
+
+        <div className="sectionText">
+            <p>
+            These updates aim to enhance your experience at Company and create a more collaborative, informed, and supportive work environment. We value your feedback, so if you have any suggestions or questions about these updates, don&apos;t hesitate to reach out through the Helpdesk. Thank you for being an essential part of our Company community!
+            </p>
         </div>
     </main>
   )

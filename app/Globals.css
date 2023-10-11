@@ -10,7 +10,7 @@
 }
 
 body {
-    @apply max-w-6xl mx-auto;
+    @apply max-w-6xl mx-auto px-5;
 }
 
 nav {
@@ -50,14 +50,18 @@ a {
 }
 
 .blogCard {
-    @apply w-full rounded-xl outline outline-slate-800 p-5 md:w-72 text-slate-800;
+    @apply w-full rounded-xl outline outline-slate-800 p-8 md:w-80 text-slate-800;
 }
 
 .blogCard h1 {
-    @apply text-center text-lg my-3;
+    @apply text-center text-lg my-3 font-semibold;
 }
 
 .blogCard p {
-    @apply text-base;
+    @apply text-base text-center;
 }
 
+
+footer {
+    @apply my-7 py-5 px-8 w-full flex bg-slate-800 rounded-xl items-center;
+}
