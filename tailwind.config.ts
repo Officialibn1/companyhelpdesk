@@ -20,10 +20,12 @@ const config: Config = {
     // }
   },
   plugins: [
-    require("daisyui")
+    require("daisyui"),
+    require('autoprefixer')
   ],
   daisyui: {
     themes: ["cupcake"]
-  }
+  },
+  
 }
 export default config
