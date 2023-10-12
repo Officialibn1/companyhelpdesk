@@ -33,7 +33,7 @@ const TicketPage = async ( { params }: {
         notFound()
     }
 
-    console.log(dummyTicket);
+    // console.log(dummyTicket);
     
     return (
     <main>
