@@ -14,6 +14,7 @@ const layout = ({ children }: {
     <html lang='en' data-theme="cupcake">
         <body className={montserrat.className}>
           <Navbar />
+          <div className=" h-48"></div>
           {children}
           <Footer />
         </body>

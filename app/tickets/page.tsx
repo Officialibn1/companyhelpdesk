@@ -3,7 +3,11 @@ import Link from 'next/link'
 import React from 'react'
 
 const fetchTickets = async () => {
-  const res = await fetch('http://localhost:4000/tickets')
+  const res = await fetch('http://localhost:4000/tickets', {
+    next: {
+      revalidate: 0
+    }
+  })
 
   const data: Ticket[] = await res.json()
   
