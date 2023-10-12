@@ -1,24 +1,40 @@
 import { Ticket } from '@/typings'
 import Link from 'next/link'
 import React from 'react'
+import { tickets } from '@/dummyData'
+import { notFound } from 'next/navigation'
 
-const fetchTicket = async (id: string) => {
-    const res = await fetch(`http://localhost:4000/tickets/${id}`, {
-        next: {
-            revalidate: 30
-        }
-    })
 
-    const data: Ticket = await res.json()
+// const fetchTicket = async (id: string) => {
+//     const res = await fetch(`http://localhost:4000/tickets/${id}`, {
+//         next: {
+//             revalidate: 30
+//         }
+//     })
 
-    return data
-}
+//     const data: Ticket = await res.json()
+
+//     return data
+// }
 
 const TicketPage = async ( { params }: {
     params: {id: string}
 }) => {
     
-    const ticket = await fetchTicket(params.id)
+    // const ticket = await fetchTicket(params.id)
+
+    // if (!ticket) {
+    //     notFound()
+    // }
+
+    const dummyTicket = tickets.find((ticket) => ticket.id === params.id)
+
+    if (!dummyTicket) {
+        notFound()
+    }
+
+    console.log(dummyTicket);
+    
     return (
     <main>
         <h1 className="deskHeader">View Ticket Details</h1>
@@ -34,16 +50,16 @@ const TicketPage = async ( { params }: {
         </h1>
 
         <div className="ticketsDetails">
-            <h1>Author: <span>{ticket.author}</span></h1>
-            <h3>Email: <span>{ticket.email}</span></h3>
-            <h3>Title: <span>{ticket.title}</span></h3>
+            <h1>Author: <span>{dummyTicket.author}</span></h1>
+            <h3>Email: <span>{dummyTicket.email}</span></h3>
+            <h3>Title: <span>{dummyTicket.title}</span></h3>
 
             <p>
-                {ticket.body}
+                {dummyTicket.body}
             </p>
 
-            <span className={`ticketPill ${ticket.priority}`}>
-                {ticket.priority} Priority
+            <span className={`ticketPill ${dummyTicket.priority}`}>
+                {dummyTicket.priority} Priority
             </span>
         </div>
 

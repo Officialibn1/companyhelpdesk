@@ -23,18 +23,20 @@ const TicketForm = () => {
     
     const submitTicket = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        setIsLoading(true)
-        
-        const res = await fetch(`http://localhost:4000/tickets`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(ticket)
-        })
 
-        if (res.status === 201) {
-            router.refresh()
-            router.push(`/tickets`)
-        }
+        router.push(`/tickets`)
+        // setIsLoading(true)
+        
+        // const res = await fetch(`http://localhost:4000/tickets`, {
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'},
+        //     body: JSON.stringify(ticket)
+        // })
+
+        // if (res.status === 201) {
+        //     router.refresh()
+        //     router.push(`/tickets`)
+        // }
     }
 
   return (
@@ -47,7 +49,7 @@ const TicketForm = () => {
                 <input 
                     type="text"  
                     value={author}
-                    required
+                    // required
                     onChange={(e) => setAuthor(e.target.value)}
                     placeholder='Your Name'
                     id="author"
@@ -60,7 +62,7 @@ const TicketForm = () => {
                 <input 
                     type="text"  
                     value={title}
-                    required
+                    // required
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder='Your Complain Title'
                     id="title"
@@ -72,7 +74,7 @@ const TicketForm = () => {
                 
                 <textarea
                     value={body}
-                    required
+                    // required
                     onChange={(e) => setBody(e.target.value)}
                     placeholder=''
                     id="body"

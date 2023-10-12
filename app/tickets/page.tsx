@@ -1,22 +1,23 @@
 import { Ticket } from '@/typings'
 import Link from 'next/link'
 import React from 'react'
+import { tickets } from '@/dummyData'
 
-const fetchTickets = async () => {
-  const res = await fetch('http://localhost:4000/tickets', {
-    next: {
-      revalidate: 0
-    }
-  })
+// const fetchTickets = async () => {
+//   const res = await fetch('http://localhost:4000/tickets', {
+//     next: {
+//       revalidate: 0
+//     }
+//   })
 
-  const data: Ticket[] = await res.json()
+//   const data: Ticket[] = await res.json()
   
-  return data;
-}
+//   return data;
+// }
 
 const TicketsPage = async () => {
 
-  const tickets = await fetchTickets();
+  // const tickets = await fetchTickets();
 
   return (
     <main>
