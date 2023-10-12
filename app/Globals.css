@@ -35,10 +35,19 @@ nav {
 .deskLogo > span {
     @apply text-2xl text-slate-200;
 }
+/* 
+.navLinks {
+    @apply hidden md:block
+} */
 
 .navLinks > ul {
     @apply hidden md:flex gap-5;
 }
+
+.navLinks > .navBtn {
+    @apply block md:hidden;
+}
+
 
 nav a {
     @apply text-xs btn btn-outline outline-slate-200 text-slate-200 rounded-lg hover:bg-slate-200 hover:text-slate-800;
@@ -145,6 +154,36 @@ nav a {
     @apply hover:outline hover:text-slate-800 hover:bg-[#f9f7f5]; 
 }
 
+/* Ticktes Form Styles */
+.ticketFormContainer {
+    @apply w-full md:w-1/2 mx-auto my-16
+}
+
+
+.ticketForm {
+    @apply bg-slate-800 text-slate-200 p-8 rounded-xl flex flex-col gap-5;
+}
+
+.inputWrapper {
+    @apply flex flex-col gap-2
+}
+
+.inputWrapper > label {
+    @apply text-lg font-medium; 
+}
+
+.inputWrapper > input, select {
+    @apply px-4 py-2 rounded-md text-slate-800;
+}
+
+.inputWrapper > textarea {
+    @apply p-4 min-h-[11rem] text-slate-800;
+}
+
+.ticketForm > button {
+    @apply w-full md:w-1/2 mx-auto mt-10;
+    @apply text-sm btn btn-outline outline-slate-200 text-slate-200 rounded-lg hover:bg-slate-200 hover:text-slate-800;
+}
 
 footer {
     @apply my-7 py-5 px-8 w-[96%] flex flex-col md:flex-row bg-slate-800 rounded-xl items-center justify-between mx-auto;
