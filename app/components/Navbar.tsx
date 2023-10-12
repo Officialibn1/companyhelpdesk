@@ -2,6 +2,8 @@ import Image from 'next/image'
 import React from 'react'
 import logo from './logo.webp'
 import Link from 'next/link'
+import NavBtn from './NavBtn'
+
 
 const Navbar = () => {
   return (
@@ -17,11 +19,13 @@ const Navbar = () => {
         </div>
 
         <div className="navLinks">
-            <ul>
+            <ul className='desktopLinks'>
                 <li><Link href={'/'}>Dashboard</Link></li>
                 <li><Link href={'/tickets'}>Tickets</Link></li>
                 <li><Link href={'/tickets/create'}>Create Ticket</Link></li>
             </ul>
+
+            <NavBtn />
         </div>
     </nav>
   )
