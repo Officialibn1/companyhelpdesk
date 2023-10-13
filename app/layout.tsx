@@ -12,6 +12,9 @@ const layout = ({ children }: {
 
   return (
     <html lang='en' data-theme="cupcake">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      </head>
         <body className={montserrat.className}>
           <Navbar />
           <div className=" h-48"></div>

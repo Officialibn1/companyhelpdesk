@@ -1,8 +1,7 @@
 import { Ticket } from '@/typings'
 import Link from 'next/link'
-import React, { Suspense } from 'react'
+import React from 'react'
 import { tickets } from '@/dummyData'
-import TicketsLoading from './loading'
 
 
 
@@ -39,22 +38,22 @@ const TicketsPage = async () => {
       </h1>
 
 
-          <div className="blogCardsContainer">
-              {tickets.map(ticket => (
-                <Link className='ticketsCard' href={`/tickets/${ticket.id}`} key={ticket.id}>
-                  <h1>Author: <span>{ticket.author}</span></h1>
-                  <h3>Email: <span>{ticket.email}</span></h3>
-                  <h3>Title: <span>{ticket.title}</span></h3>
-                  <p>
-                    {ticket.body.slice(0, 150)}
-                  </p>
+      <div className="blogCardsContainer">
+          {tickets.map(ticket => (
+            <Link className='ticketsCard' href={`/tickets/${ticket.id}`} key={ticket.id}>
+              <h1>Author: <span>{ticket.author}</span></h1>
+              <h3>Email: <span>{ticket.email}</span></h3>
+              <h3>Title: <span>{ticket.title}</span></h3>
+              <p>
+                {ticket.body.slice(0, 150)}
+              </p>
 
-                  <span className={`ticketPill ${ticket.priority}`}>
-                    {ticket.priority} Priority
-                  </span>
-                </Link>
-              ))}
-          </div>
+              <span className={`ticketPill ${ticket.priority}`}>
+                {ticket.priority} Priority
+              </span>
+            </Link>
+          ))}
+      </div>
 
     </>
   )

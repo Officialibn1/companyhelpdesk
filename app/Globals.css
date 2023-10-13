@@ -40,10 +40,6 @@ nav .desktopLinks a {
 .deskLogo > span {
     @apply text-2xl text-slate-200;
 }
-/* 
-.navLinks {
-    @apply hidden md:block
-} */
 
 .navLinks > ul {
     @apply hidden md:flex gap-5;

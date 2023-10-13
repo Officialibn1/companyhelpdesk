@@ -33,8 +33,6 @@ const TicketPage = async ( { params }: {
     if (!dummyTicket) {
         notFound()
     }
-
-    // console.log(dummyTicket);
     
     return (
     <main>

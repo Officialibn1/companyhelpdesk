@@ -20,8 +20,7 @@ const config: Config = {
     // }
   },
   plugins: [
-    require("daisyui"),
-    require('autoprefixer')
+    require("daisyui")
   ],
   daisyui: {
     themes: ["cupcake"]
