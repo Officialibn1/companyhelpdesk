@@ -1,8 +1,8 @@
 import { Ticket } from '@/typings'
-import Link from 'next/link'
-import React from 'react'
+import React, { Suspense } from 'react'
 import { tickets } from '@/dummyData'
 import { notFound } from 'next/navigation'
+import TicketLoading from './loading'
 
 
 // const fetchTicket = async (id: string) => {
@@ -26,6 +26,7 @@ const TicketPage = async ( { params }: {
     // if (!ticket) {
     //     notFound()
     // }
+    await new Promise((resolve) => setTimeout(resolve, 2000))
 
     const dummyTicket = tickets.find((ticket) => ticket.id === params.id)
 
@@ -37,37 +38,22 @@ const TicketPage = async ( { params }: {
     
     return (
     <main>
-        <h1 className="deskHeader">View Ticket Details</h1>
+        <Suspense fallback={<TicketLoading />}>
 
-        <section className="sectionText">
-            <p>
-                Welcome to the details page of each ticket, here you can view the full details of a specific ticket.
-            </p>
-        </section>
+            <div className="ticketsDetails">
+                <h1>Author: <span>{dummyTicket.author}</span></h1>
+                <h3>Email: <span>{dummyTicket.email}</span></h3>
+                <h3>Title: <span>{dummyTicket.title}</span></h3>
 
-        <h1 className="sectionHeader">
-            Ticket Details
-        </h1>
+                <p>
+                    {dummyTicket.body}
+                </p>
 
-        <div className="ticketsDetails">
-            <h1>Author: <span>{dummyTicket.author}</span></h1>
-            <h3>Email: <span>{dummyTicket.email}</span></h3>
-            <h3>Title: <span>{dummyTicket.title}</span></h3>
-
-            <p>
-                {dummyTicket.body}
-            </p>
-
-            <span className={`ticketPill ${dummyTicket.priority}`}>
-                {dummyTicket.priority} Priority
-            </span>
-        </div>
-
-        <div className="ticketLinkContainer">
-            <Link href={'/tickets'} className='ticketLink'>
-                All Tickets
-            </Link>
-        </div>
+                <span className={`ticketPill ${dummyTicket.priority}`}>
+                    {dummyTicket.priority} Priority
+                </span>
+            </div>
+        </Suspense>
     </main>
   )
 }
