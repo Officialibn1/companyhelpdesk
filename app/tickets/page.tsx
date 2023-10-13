@@ -16,23 +16,12 @@ import { tickets } from '@/dummyData'
 // }
 
 const TicketsPage = async () => {
+  await new Promise(resolve => setTimeout(resolve, 2500))
 
   // const tickets = await fetchTickets();
 
   return (
-    <main>
-      <h1 className="deskHeader">View All Tickets</h1>
-
-      <section className="sectionText">
-        <p>
-        Transparency is our watchword. On this Tickets page, you can effortlessly monitor the progress of all submitted tickets. Track their status, witness the journey from submission to resolution, and rest assured that your concerns are in capable hands.
-        </p>
-      </section>
-
-      <h1 className="sectionHeader">
-        All Available Tickets
-      </h1>
-
+    <>
       <div className="blogCardsContainer">
         {tickets.map(ticket => (
           <Link className='ticketsCard' href={`/tickets/${ticket.id}`} key={ticket.id}>
@@ -49,7 +38,7 @@ const TicketsPage = async () => {
           </Link>
         ))}
       </div>
-    </main>
+    </>
   )
 }
 
