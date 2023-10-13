@@ -232,3 +232,53 @@ footer {
 .footerLeft > p {
     @apply text-slate-200 text-center mt-5 font-thin;
 }
+
+@keyframes loading-ui {
+    0% {
+        background-color: rgba(121, 122, 126, 0.9);
+    } 
+    
+    100% {
+        background-color: rgba(191, 210, 240, 0.717);
+    } 
+
+}
+
+@keyframes loading-uiSm {
+    0% {
+        background-color: rgba(49, 57, 69, 0.8);
+    } 
+    
+    100% {
+        background-color: rgba(66, 76, 91, 0.6);
+    } 
+
+}
+
+/* Animation for the large ui */
+.loadingUi {
+    animation: loading-ui 350ms linear infinite alternate;
+    @apply min-h-6 w-1/2 rounded-sm my-2;
+}
+
+.loadingUi:nth-of-type(1) {
+    width: 40%;
+}
+
+.loadingUi:nth-of-type(3) {
+    width: 45%;
+}
+
+.loadingDiv {
+    @apply p-5 bg-[#f9f7f5] rounded-xl mt-5 mb-7;
+}
+
+/* Animation for the small ui */
+.loadingUiSm {
+    animation: loading-uiSm 350ms linear infinite alternate;
+    @apply min-h-[1rem] w-full rounded-sm my-2;
+}
+
+.loadingUiSm:nth-of-type(7) {
+    width: 70%;
+}
